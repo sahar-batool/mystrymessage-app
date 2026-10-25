@@ -26,3 +26,5 @@ console.log('database connection failed', error);
 
 }
 }
+
+export default dbConnect;
