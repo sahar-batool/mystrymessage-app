@@ -1,0 +1,27 @@
+import 'next-auth';
+
+declare module 'next-auth' {
+    interface User{
+        _id?: string,
+        isVerified?: string,
+        isAcceptingMessages?: boolean,
+        username?: string 
+    }
+    interface Session{
+        user:{
+            _id?: string,
+            isVerified?: boolean,
+            isAcceptingMessages?: boolean,
+            username?: string
+        } & defaultSession['user']
+    }
+}
+
+declare module 'next-auth' {
+    interface JWT{
+           _id?: string,
+            isVerified?: boolean,
+            isAcceptingMessages?: boolean,
+            username?: string
+    }
+}
